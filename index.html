@@ -1,57 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
+<div>
+	<span class="label">Good</span><br />
+	<span class="checkbox">
+		<input
+			type="checkbox"
+			id="good"
 		/>
-		<style>
-			div {
-				display: flex;
-				gap: 16px;
-			}
-		</style>
-		<title>Good Fast Cheap</title>
-	</head>
-	<body>
-		<label>
-			<input
-				type="range"
-				id="good"
-				min="1"
-				max="2"
-				value="2"
-				oninput="goodBtn()"
-				onclick="goodBtn()"
-			/>
-			Good
-		</label>
-		<label>
-			<input
-				type="range"
-				id="cheap"
-				min="1"
-				max="2"
-				value="2"
-				oninput="cheapBtn()"
-				onclick="cheapBtn()"
-			/>
-			Cheap
-		</label>
-		<label>
-			<input
-				type="range"
-				id="fast"
-				min="1"
-				max="2"
-				value="2"
-				oninput="fastBtn()"
-				onclick="fastBtn()"
-			/>
-			Fast
-		</label>
-
-		<script src="main.js"></script>
-	</body>
-</html>
+		<label
+			data-on="YES"
+			data-off="NO"
+		></label>
+	</span>
+</div>
+<div>
+	<span class="label">Cheap</span><br />
+	<span class="checkbox">
+		<input
+			type="checkbox"
+			id="cheap"
+		/>
+		<label
+			data-on="YES"
+			data-off="NO"
+		></label>
+	</span>
+</div>
+<div>
+	<span class="label">Fast</span><br />
+	<span class="checkbox">
+		<input
+			type="checkbox"
+			id="fast"
+		/>
+		<label
+			data-on="YES"
+			data-off="NO"
+		></label>
+	</span>
+</div>

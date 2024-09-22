@@ -1,23 +1,40 @@
-function goodBtn() {
-	let good = document.getElementById("good");
-	if (goodBtn.value == "2") {
-		goodBtn.value = "1";
-	} else if ((goodBtn.value = "1")) {
-		goodBtn.value = "2";
-	}
-}
-if (good.value == "2" && fast.value == "2") {
-	cheap.value = "1";
-} else if (good.value == "2" && cheap.value == "2") {
-	fast.value = "1";
-} else if (fast.value == "2" && cheap.value == "2") {
-	good.value = "1";
-}
-// if (goodBtn.value == "2") {
-// 	goodBtn.value = "1";
-// } else if ((goodBtn.value = "1")) {
-// 	goodBtn.value = "2";
-// }
+$(document).ready(function () {
+	var good = false,
+		cheap = false,
+		fast = false;
+	$("#good").on("click", function () {
+		if (!$("#good").is(":checked")) {
+			good = false;
+		} else {
+			good = true;
+			if (fast && cheap) {
+				fast = false;
+				$("#fast").prop("checked", false);
+			}
+		}
+	});
 
-let cheap = document.getElementById("cheap");
-let fast = document.getElementById("fast");
+	$("#cheap").on("click", function () {
+		if (!$("#cheap").is(":checked")) {
+			cheap = false;
+		} else {
+			cheap = true;
+			if (fast && good) {
+				good = false;
+				$("#good").prop("checked", false);
+			}
+		}
+	});
+
+	$("#fast").on("click", function () {
+		if (!$("#fast").is(":checked")) {
+			fast = false;
+		} else {
+			fast = true;
+			if (cheap && good) {
+				cheap = false;
+				$("#cheap").prop("checked", false);
+			}
+		}
+	});
+});
